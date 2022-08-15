@@ -1,0 +1,6 @@
+.ProPic{
+    height: 100px;
+    border: #f1f1f1 solid 1px;
+    margin-right: 10px;
+    object-fit: contain;
+}

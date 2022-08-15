@@ -1,0 +1,11 @@
+
+
+.productCard{
+    min-width: 200px !important;
+    max-width: 270px !important;
+}
+
+.card-img-top {
+    height: 150px;
+    object-fit: contain;
+}
