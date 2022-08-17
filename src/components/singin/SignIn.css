@@ -1,0 +1,18 @@
+custom-control-label {
+    font-weight: 400;
+}
+ .CardSignIn {
+     border-radius: 30px;
+     margin-right: 0;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+ }
+ .InputBoxStyle{
+     border-radius: 30px;
+     border: 1px solid #ccc;
+     padding: 10px;
+ }
+ .imageLogin{
+     border-radius: 30px;
+     border: 1px solid #ccc;
+     padding: 5px;
+ }

@@ -9,6 +9,8 @@ import {apiServer} from "./services/apiService";
 import {useEffect, useState} from "react";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import CartList from "./components/cart/CartList";
+import SignIn from "./components/singin/SignIn";
+import SignUp from "./components/singup/SignUp";
 
 
 function App() {
@@ -44,6 +46,10 @@ function App() {
                             <Routes>
                                 <Route path="/" element={<ProductsBoard className="m-2" products={Products} doSearch={doSearch}/>}></Route>
                                 <Route path="/cart" element={<CartList Products={Products}></CartList>}> </Route>
+                                <Route path="/singin" element={<SignIn></SignIn>}> </Route>
+                                <Route path="/singUp" element={<SignUp></SignUp>}> </Route>
+
+
                             </Routes>
                     </Row>
                 </div>
