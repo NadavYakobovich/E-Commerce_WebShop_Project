@@ -9,9 +9,7 @@ function SideBar({doSearch}) {
     const searchValue = React.useRef(null);
     const search = function () {
         const barandValue = $('#Category').find(":selected").val()
-        console.log(barandValue)
         const QueryParmeters= { searchValue: searchValue.current.value, category: $('#Category').find(":selected").val(), brand:  $('#Brand').find(":selected").val() };
-        console.log(QueryParmeters);
         doSearch(QueryParmeters);
     }
     return (
