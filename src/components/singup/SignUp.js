@@ -1,11 +1,55 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Card, Col, Image, Row} from "react-bootstrap";
 import $ from "jquery";
+import ValidAlert from "../singin/ValidAlert";
 
 function SignUp({api}) {
+    const [validEmail, setValidEmail] = useState(true);
+    const [validPassword, setValidPassword] = useState(true);
+
+
+    function validateEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    function validatePassword(password) {
+        const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        return re.test(String(password));
+    }
+
+
+    //validation that the email and the password is valid
+    function validationCheck(){
+        const email = $('#email').val()
+        const password = $('#password').val()
+
+        setValidEmail(true)
+        setValidPassword(true)
+
+        const validEmail = validateEmail(email)
+        const validPassword = validatePassword(password)
+
+        if (!validEmail) {
+            setValidEmail(false)
+        }
+        if (!validPassword) {
+            setValidPassword(false)
+        }
+        if (!validEmail || !validPassword) {
+            //one of them is not valid so display the alert and don't sent the request to the server
+            return false
+        }
+    }
 
     function SubmitHandler(event) {
         event.preventDefault();
+
+        if(!validationCheck()){
+            //if there is problem with the input of the user
+            return
+        }
+
         const user = {
             email: $('#email').val(),
             password: $('#password').val(),
@@ -48,6 +92,7 @@ function SignUp({api}) {
                                     placeholder="Enter email"
                                 />
                             </div>
+                            <ValidAlert valid={validEmail} type={"email"}/>
                             <div className="mb-3">
                                 <label>Password</label>
                                 <input
@@ -57,6 +102,7 @@ function SignUp({api}) {
                                     placeholder="Enter password"
                                 />
                             </div>
+                            <ValidAlert valid={validPassword} type={"password"}/>
                             <div className="d-grid">
                                 <button type="submit" className="btn btn-primary InputBoxStyle">
                                     Submit

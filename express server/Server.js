@@ -3,6 +3,9 @@ const app = express();
 const path = require('path');
 var cors = require('cors')
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser')
+const jsonParser = bodyParser.json();
+app.use(jsonParser);
 
 const userController = require('./controllers/UserControllers');
 const productController = require('./controllers/ProductControllers');
@@ -44,6 +47,9 @@ app.post('/api/user/cart/add', userController.addProductToCart)
 
 //get the user cart from the server
 app.get('/api/user/cart', userController.getCart)
+
+//delete the product from the user cart
+app.post('/api/user/cart/delete', userController.removeProductFromCart)
 
 app.listen(4000, () => {
         console.log('listening on port 4000');

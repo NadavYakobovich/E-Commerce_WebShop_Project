@@ -25,8 +25,9 @@ function NavBar() {
                        </>
                         :
                         <>
-                        <Nav.Link className="nav-link" as={Link} to="/"><i className="bi bi-person-circle"></i> {loggedInUser.name}</Nav.Link>
                         <Nav.Link className="nav-link" as={Link} to="/"><i className="bi bi-person-circle"></i>  login  Out</Nav.Link>
+                            <Nav.Link className="nav-link" as={Link} to="/"><i className="bi bi-person-circle"></i> {loggedInUser.userName}</Nav.Link>
+
                         </>
                     }
                 </Nav>

@@ -8,13 +8,21 @@ function CartList({api}) {
     const [cart, setCart] = useState(null);
     const loggedInUser = useContext(UserContext);
 
+    async function removeProductFromCart(productId) {
+        console.log(productId)
+        console.log(loggedInUser._id)
+        await api.removeProductFromCart(loggedInUser._id, productId)
+        const newCart = await api.getCartList(loggedInUser._id)
+        setCart(newCart)
+    }
+
     //get from the server the cart of the user, if the user is logged in
     useEffect(() => {
         if(loggedInUser != null){
         api.getCartList(loggedInUser._id).then(data => {
             setCart(data);
         });
-    }}, [loggedInUser._id]);
+    }}, [loggedInUser]);
 
     //the user is not logged
 
@@ -44,6 +52,7 @@ function CartList({api}) {
                 )
             } else {
                 //the cart is not empty and displayed
+
                 return (
                     <Row>
                         <Col></Col>
@@ -63,7 +72,7 @@ function CartList({api}) {
                                                 Price {product.price}
                                             </Col>
                                             <Col>
-                                                <Button variant="danger">Remove</Button>
+                                                <Button variant="danger" onClick={() => removeProductFromCart(product._id)}>Remove</Button>
                                             </Col>
                                         </Row>
                                     </Card.Body>

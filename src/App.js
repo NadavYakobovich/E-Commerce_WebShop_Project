@@ -48,7 +48,7 @@ function App() {
                         {/*    <SideBar doSearch={doSearch}></SideBar>*/}
                         {/*    </Col>*/}
                             <Routes>
-                                <Route path="/" element={<ProductsBoard className="m-2" products={Products} doSearch={doSearch}/>}></Route>
+                                <Route path="/" element={<ProductsBoard className="m-2" products={Products} api={api} doSearch={doSearch}/>}></Route>
                                 <Route path="/cart" element={<CartList api={api}></CartList>}> </Route>
                                 <Route path="/singin" element={<SignIn api={api} setLoggedInUser={setLoggedInUser}></SignIn>}> </Route>
                                 <Route path="/singUp" element={<SignUp api={api} ></SignUp>}> </Route>

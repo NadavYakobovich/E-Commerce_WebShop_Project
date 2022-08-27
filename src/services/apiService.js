@@ -63,9 +63,17 @@ export class apiServer {
     }
 
     async addProductToCart(userId, productId, quantity) {
-        let data = await this.axiosInstance.post('user/cart', {userId: userId, productId: productId, quantity: quantity}).then(({data}) => data).catch(err => {
+        let data = await this.axiosInstance.post('user/cart/add', {data: {userId: userId, productId: productId, quantity: quantity}}).then(({data}) => data).catch(err => {
             console.log(err)
         });
+        return data
+    }
+
+    async removeProductFromCart(userId, productId) {
+        let data = await this.axiosInstance.post('user/cart/delete',{data: {userId: userId, productId: productId}}).then(({data}) => data).catch(err => {
+            console.log(err)
+        }
+        );
         return data
     }
 }
