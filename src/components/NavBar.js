@@ -3,17 +3,20 @@ import {Container, Nav, Navbar} from "react-bootstrap";
 import{UserContext} from "../App";
 import {Link} from "react-router-dom";
 
-function NavBar() {
+function NavBar({setLoggedInUser}) {
 
     const loggedInUser = useContext(UserContext);
-    console.log("in the navbar");
-    console.log(loggedInUser);
+
+
+    function loggedOutFun(){
+        setLoggedInUser(null)
+    }
 
     return (
 
         <Navbar bg="dark" variant="dark">
             <Container className="w-75">
-                <Navbar.Brand className="nav-link"  as={Link} to="/" >Navbar</Navbar.Brand>
+                <Navbar.Brand className="nav-link"  as={Link} to="/" >WebShop Project</Navbar.Brand>
                 <Nav className="me-auto">
                     <Nav.Link className="nav-link" as={Link} to="/">Home</Nav.Link>
                     <Nav.Link  className="nav-link" as={Link} to="/cart"><i className="bi bi-cart-check-fill"></i> Cart</Nav.Link>
@@ -25,7 +28,7 @@ function NavBar() {
                        </>
                         :
                         <>
-                        <Nav.Link className="nav-link" as={Link} to="/"><i className="bi bi-person-circle"></i>  login  Out</Nav.Link>
+                        <Nav.Link className="nav-link" as={Link} to="/"><i className="bi bi-person-circle"></i> <span onClick={loggedOutFun}> login  Out</span> </Nav.Link>
                             <Nav.Link className="nav-link" as={Link} to="/"><i className="bi bi-person-circle"></i> {loggedInUser.userName}</Nav.Link>
 
                         </>

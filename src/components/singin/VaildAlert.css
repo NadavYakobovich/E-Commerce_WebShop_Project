@@ -1,5 +1,4 @@
 .alert{
-    margin: 1px;
-    margin-top: 5px;
+    margin: 1px !important;
     padding: 0 !important;
 }

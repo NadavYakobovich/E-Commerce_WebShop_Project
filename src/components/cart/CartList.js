@@ -28,9 +28,13 @@ function CartList({api}) {
 
     if (loggedInUser == null) {
         return (
-            <div>
-                <h1>Please Sign In</h1>
-            </div>
+            <Card className="CardMess">
+                <h3>Please Sign In</h3>
+                <div className="d-flex">
+                <Button className="ButtonStyle" variant="primary" to="/singin" > Click Here To Sign In</Button>
+                <Button className="ButtonStyle" variant="danger" to="/singin" > Click Here To Sign Up</Button>
+                </div>
+            </Card>
         )
     } else {
         //the user is logged in
@@ -46,9 +50,9 @@ function CartList({api}) {
             //the cart is empty
             if (cart.length === 0) {
                 return (
-                    <div>
+                    <Card>
                         <h1>Your cart is empty</h1>
-                    </div>
+                    </Card>
                 )
             } else {
                 //the cart is not empty and displayed
@@ -92,7 +96,6 @@ function CartList({api}) {
                                     </blockquote>
                                     <Row className="fw-bold m-2">
                                         <Col> <Button variant="outline-danger" size="md">Checkout</Button></Col>
-                                        <Col><Button variant="outline-danger" size="md">Continue </Button></Col>
                                     </Row>
                                 </Card.Body>
                             </Card>

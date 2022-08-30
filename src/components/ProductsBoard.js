@@ -10,11 +10,11 @@ function ProductsBoard({products,doSearch, api}) {
                     <SideBar doSearch={doSearch}></SideBar>
                 </Col>
                 <Col sm={9}>
-                    <div>
+                    <Row>
                         {products.map((product, index) => (
                             <ProductCard  key={index} api={api} product={product}></ProductCard>)
                         )}
-                    </div>
+                    </Row>
                 </Col>
             </>
     );

@@ -2,10 +2,13 @@ import React, {useState} from 'react';
 import {Card, Col, Image, Row} from "react-bootstrap";
 import $ from "jquery";
 import ValidAlert from "../singin/ValidAlert";
+import {useNavigate} from "react-router-dom";
 
-function SignUp({api}) {
+function SignUp({api,setLoggedInUser}) {
     const [validEmail, setValidEmail] = useState(true);
     const [validPassword, setValidPassword] = useState(true);
+    const navigate = useNavigate();
+
 
 
     function validateEmail(email) {
@@ -40,6 +43,7 @@ function SignUp({api}) {
             //one of them is not valid so display the alert and don't sent the request to the server
             return false
         }
+        return true
     }
 
     function SubmitHandler(event) {
@@ -55,10 +59,13 @@ function SignUp({api}) {
             password: $('#password').val(),
             name: $('#name').val()
         }
+        console.log(user)
         console.log(user  )
         api.addUser(user).then(data => {
             if (data != null) {
                 console.log(data)
+                setLoggedInUser(data)
+                navigate("/")
             }
         }).catch(error => {
                 console.log(error)

@@ -14,10 +14,11 @@ function validateEmail(email) {
 }
 
 
-
 function SignIn({api, setLoggedInUser}) {
 
     const [validEmail, setValidEmail] = useState(true);
+    const [userFound, setUserFound] = useState(true);
+
     const navigate = useNavigate();
 
 
@@ -28,8 +29,9 @@ function SignIn({api, setLoggedInUser}) {
         const password = $('#password').val()
 
         setValidEmail(true)
+        setUserFound(true)
 
-
+    //todo add authentication after checking
         //validation -
 
         // const validEmail = validateEmail(email)
@@ -41,8 +43,8 @@ function SignIn({api, setLoggedInUser}) {
         // }
 
 
-
         await api.getUser(email, password).then(data => {
+            console.log(data)
             if (data != null) {
                 setLoggedInUser(data)
                 console.log(data)
@@ -53,6 +55,7 @@ function SignIn({api, setLoggedInUser}) {
             } else {
                 console.log('the user is not logged in')
                 console.log(data)
+                setUserFound(false)
             }
         }).catch(error => {
                 console.log(error)
@@ -76,9 +79,7 @@ function SignIn({api, setLoggedInUser}) {
                                     className="form-control InputBoxStyle"
                                     placeholder="Enter email"
                                 />
-
                                 <ValidAlert valid={validEmail} type={"email"}/>
-
                             </div>
                             <div className="mb-3">
                                 <label>Password</label>
@@ -89,6 +90,7 @@ function SignIn({api, setLoggedInUser}) {
                                     placeholder="Enter password"
                                 />
                             </div>
+                            <ValidAlert valid={userFound} type={"userFound"}/>
                             <div className="d-grid">
                                 <button type="submit" className="btn btn-primary InputBoxStyle">
                                     Submit

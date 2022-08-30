@@ -11,6 +11,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import CartList from "./components/cart/CartList";
 import SignIn from "./components/singin/SignIn";
 import SignUp from "./components/singup/SignUp";
+import ManagementBoard from "./components/managementBoard/ManagementBoard";
 
 
 export const UserContext = createContext();
@@ -40,7 +41,7 @@ function App() {
             <Router>
                 <div className="App">
                     <Row>
-                        <NavBar className="col-8" loggedInUser={loggedInUser} ></NavBar>
+                        <NavBar className="col-8" setLoggedInUser={setLoggedInUser} ></NavBar>
                     </Row>
                     <Row>
                         {/*<Col sm={3}>*/}
@@ -51,7 +52,8 @@ function App() {
                                 <Route path="/" element={<ProductsBoard className="m-2" products={Products} api={api} doSearch={doSearch}/>}></Route>
                                 <Route path="/cart" element={<CartList api={api}></CartList>}> </Route>
                                 <Route path="/singin" element={<SignIn api={api} setLoggedInUser={setLoggedInUser}></SignIn>}> </Route>
-                                <Route path="/singUp" element={<SignUp api={api} ></SignUp>}> </Route>
+                                <Route path="/singUp" element={<SignUp api={api} setLoggedInUser={setLoggedInUser} ></SignUp>}> </Route>
+                                <Route path="/management" element={<ManagementBoard></ManagementBoard>}> </Route>
                             </Routes>
                     </Row>
                 </div>
