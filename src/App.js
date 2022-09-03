@@ -53,7 +53,7 @@ function App() {
                                 <Route path="/cart" element={<CartList api={api}></CartList>}> </Route>
                                 <Route path="/singin" element={<SignIn api={api} setLoggedInUser={setLoggedInUser}></SignIn>}> </Route>
                                 <Route path="/singUp" element={<SignUp api={api} setLoggedInUser={setLoggedInUser} ></SignUp>}> </Route>
-                                <Route path="/management" element={<ManagementBoard></ManagementBoard>}> </Route>
+                                <Route path="/management" element={<ManagementBoard api={api}></ManagementBoard>}> </Route>
                             </Routes>
                     </Row>
                 </div>

@@ -20,6 +20,7 @@ export class apiServer {
         setProducts(data);
     }
 
+    //todo - do the query on the server and not in the client
     //method for getting list of products from the server by filter params
     async FilterProducts(QueryParmeters) {
         let data = await this.axiosInstance.get('products').then(({data}) => data).catch(err => {
