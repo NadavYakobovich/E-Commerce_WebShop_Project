@@ -16,7 +16,7 @@
 ### home page:
 * the user can view the products and choose item to add the products cart
 
-<img src="./readmepic/homepage.png" alt="drawing" width="600"/>
+<img src="./readmepic/homepage.png" alt="drawing" width="500"/>
 
 ### filter feature:
 *the user can filter the products by category/Brand or by name
