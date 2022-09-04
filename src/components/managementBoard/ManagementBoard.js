@@ -20,18 +20,18 @@ function ManagementBoard({api}) {
     } else {
 
         return (
-            <Row>
+            <Row className="management-board">
                 <Col sm={2} className="sideManger">
                     <Nav defaultActiveKey="/home" className="flex-column">
                         <Nav.Link href="/home">Add New Products</Nav.Link>
                         <Nav.Link eventKey="link-1">Users</Nav.Link>
-                        <Nav.Link eventKey="link-2">Link</Nav.Link>
+                        <Nav.Link eventKey="link-2">Orders</Nav.Link>
                     </Nav>
                 </Col>
                 <Col sm={10}>
                     {
                         products.map((product, index) => (
-                            <ListItemManager key={index}  product={product}></ListItemManager>))
+                            <ListItemManager key={index} api={api} product={product} setProducts={setProducts}></ListItemManager>))
                     }
 
                 </Col>

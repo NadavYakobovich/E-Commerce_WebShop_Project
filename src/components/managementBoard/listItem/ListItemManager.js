@@ -1,8 +1,9 @@
 import React from 'react';
 import { Button, Card, Col, Row} from "react-bootstrap";
 import "../ManagementBoard.css"
+import EditSideWin from "../editSideWin/EditSideWin";
 
-function ListItemManager({product}) {
+function ListItemManager({api,product,setProducts}) {
 
 
 
@@ -25,8 +26,9 @@ function ListItemManager({product}) {
                     {product.price}
                 </Col>
                 <Col sm={2}  className="my-auto">
-                    <Button  className="m-2" variant="danger">Remove from Shop</Button>
-                    <Button   className="m-2" variant="primary">Edit</Button>
+                    <Button  className="m-2 btn-shape" variant="danger">Remove from Shop</Button>
+                    {/*the edit button should open a side window with the product details*/}
+                    <EditSideWin product={product} api={api} placement={'end'} setProducts={setProducts}></EditSideWin>
                 </Col>
             </Row>
         </Card>

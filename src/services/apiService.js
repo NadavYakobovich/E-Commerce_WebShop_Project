@@ -1,6 +1,4 @@
-import dataProdacts from '../data/products.json';
 import axios from 'axios';
-import reportWebVitals from "../reportWebVitals";
 
 export class apiServer {
     axiosInstance;
@@ -57,25 +55,42 @@ export class apiServer {
 
 //the function get user id and return the user cart from the server api
     async getCartList(userId) {
-        let data = await this.axiosInstance.get('user/cart', {params:{id :userId} }).then(({data}) => data).catch(err => {
+        let data = await this.axiosInstance.get('user/cart', {params: {id: userId}}).then(({data}) => data).catch(err => {
             console.log(err)
         });
         return data
     }
 
     async addProductToCart(userId, productId, quantity) {
-        let data = await this.axiosInstance.post('user/cart/add', {data: {userId: userId, productId: productId, quantity: quantity}}).then(({data}) => data).catch(err => {
+        let data = await this.axiosInstance.post('user/cart/add', {
+            data: {
+                userId: userId,
+                productId: productId,
+                quantity: quantity
+            }
+        }).then(({data}) => data).catch(err => {
             console.log(err)
         });
         return data
     }
 
     async removeProductFromCart(userId, productId) {
-        let data = await this.axiosInstance.post('user/cart/delete',{data: {userId: userId, productId: productId}}).then(({data}) => data).catch(err => {
-            console.log(err)
-        }
+        let data = await this.axiosInstance.post('user/cart/delete', {
+            data: {
+                userId: userId,
+                productId: productId
+            }
+        }).then(({data}) => data).catch(err => {
+                console.log(err)
+            }
         );
         return data
+    }
+
+    async updateProduct(product) {
+        return await this.axiosInstance.post('products/update', {data: product}).then(({data}) => data).catch(err => {
+            console.log(err)
+        })
     }
 }
 

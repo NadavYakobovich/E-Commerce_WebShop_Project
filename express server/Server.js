@@ -51,6 +51,9 @@ app.get('/api/user/cart', userController.getCart)
 //delete the product from the user cart
 app.post('/api/user/cart/delete', userController.removeProductFromCart)
 
+app.post('/api/products/update', productController.update)
+
+
 app.listen(4000, () => {
         console.log('listening on port 4000');
     }

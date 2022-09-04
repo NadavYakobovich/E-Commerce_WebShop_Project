@@ -22,7 +22,7 @@ function ProductCard(props) {
     }
 
     return (
-        <Col className="m-2" md={3} sm={6} xs={6}>
+        <Col className="m-2"  md={3} sm={6} xs={6}>
             <Card className="productCard" style={{width: '40rem', minWidth: '30px'}}>
             <Card.Img variant="top" src={product.pic}/>
             <Card.Body>
@@ -30,7 +30,7 @@ function ProductCard(props) {
             <Card.Text>
                 the price is {product.price}
             </Card.Text>
-            <Button onClick={addToCart} variant="primary">buy</Button>
+            <Button onClick={addToCart} variant="primary" >buy</Button>
                 <Badge className="m-2 text-black" bg="light"> {product.brand}</Badge>
             </Card.Body>
             </Card>

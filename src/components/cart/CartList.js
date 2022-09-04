@@ -86,7 +86,7 @@ function CartList({api}) {
 
                         <Col sm={3}>
                             <Card className="m-2">
-                                <Card.Header>Sum of The Order is</Card.Header>
+                                <Card.Header>Total Price</Card.Header>
                                 <Card.Body>
                                     <blockquote className="blockquote mb-0">
                                         <p>
