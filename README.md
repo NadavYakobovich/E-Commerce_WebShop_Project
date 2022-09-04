@@ -19,12 +19,12 @@
 <img src="./readmepic/homepage.png" alt="drawing" width="500"/>
 
 ### filter feature:
-*the user can filter the products by category/Brand or by name
+* the user can filter the products by category/Brand or by name
 
 <img src="./readmepic/filter.png" alt="drawing" width="500"/>
 
 ### cart page:
-*each user that login can add products to cart and can delete the products from cart, the cart is save in the database
+* each user that login can add products to cart and can delete the products from cart, the cart is save in the database
 
 <img src="./readmepic/cart.png" alt="drawing" width="500"/>
 
@@ -34,7 +34,7 @@
 <img src="./readmepic/signup.png" alt="drawing" width="500"/>
 
 ### management page:
-*the admin can add new products, delete products, update products, and view all products
+* the admin can add new products, delete products, update products, and view all products
 
 <img src="./readmepic/management.png" alt="drawing" width="500"/>
 
