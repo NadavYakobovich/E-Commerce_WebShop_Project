@@ -62,7 +62,7 @@ function EditSideWin({api,setProducts, product, ...props}) {
                                 <Form.Control type="text" defaultValue={product.price} placeholder={product.price}/>
                             </Form.Group>
                             <Button variant="primary" type="submit">
-                                Submit
+                                UPDATE
                             </Button>
                         </Form>
                     </Row>

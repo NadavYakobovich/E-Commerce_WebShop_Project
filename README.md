@@ -38,6 +38,11 @@
 
 <img src="./readmepic/management.png" alt="drawing" width="700"/>
 
+* edit product window
+
+<img src="./readmepic/edititemwin.png" alt="drawing" width="700"/>
+
+
 ## Client
 * React
 * React-Router
