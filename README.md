@@ -26,17 +26,17 @@
 ### cart page:
 * each user that login can add products to cart and can delete the products from cart, the cart is save in the database
 
-<img src="./readmepic/cart.png" alt="drawing" width="500"/>
+<img src="./readmepic/cart.png" alt="drawing" width="600"/>
 
 ### sign up & sign in page:
-<img src="./readmepic/signin.png" alt="drawing" width="500"/>
+<img src="./readmepic/signin.png" alt="drawing" width="600"/>
 
-<img src="./readmepic/signup.png" alt="drawing" width="500"/>
+<img src="./readmepic/signup.png" alt="drawing" width="600"/>
 
 ### management page:
 * the admin can add new products, delete products, update products, and view all products
 
-<img src="./readmepic/management.png" alt="drawing" width="500"/>
+<img src="./readmepic/management.png" alt="drawing" width="700"/>
 
 ## Client
 * React
