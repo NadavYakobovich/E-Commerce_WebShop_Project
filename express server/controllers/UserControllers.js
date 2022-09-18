@@ -41,6 +41,7 @@ async function getCartProducts(userCart) {
     let products = []
     for (let i = 0; i < userCart.length; i++) {
         let product = await Product.findById(userCart[i].productId).lean().exec()
+        product.quantity = userCart[i].quantity
         products.push(product)
     }
     return products
@@ -82,6 +83,21 @@ exports.addProductToCart = async (req, res) => {
         } else {
             res.status(500);
             throw new Error("user not found")
+        }
+    }
+
+    //get  all the cart of the users from the server
+    exports.getUsersCart = async (req, res) => {
+        const carts = await Users.find({}).select('userName cart').lean()
+        if (carts) {
+            for (let index in  carts) {
+                carts[index].cart = await getCartProducts(carts[index].cart)
+            }
+            res.status(200).json(carts)
+        }
+        else {
+            res.status(500);
+            throw new Error("carts not found")
         }
     }
 

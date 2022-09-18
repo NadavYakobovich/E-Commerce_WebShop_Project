@@ -92,6 +92,13 @@ export class apiServer {
             console.log(err)
         })
     }
+
+    //get all the cart of the users from the serever (as objects with the name of the user and the cart)
+    async getUsersCart(setProducts) {
+         await this.axiosInstance.get('user/carts').then(({data}) => setProducts(data)).catch(err => {
+            console.log(err)
+        })
+    }
 }
 
 

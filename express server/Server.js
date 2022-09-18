@@ -53,6 +53,8 @@ app.post('/api/user/cart/delete', userController.removeProductFromCart)
 
 app.post('/api/products/update', productController.update)
 
+app.get('/api/user/carts', userController.getUsersCart)
+
 
 app.listen(4000, () => {
         console.log('listening on port 4000');
