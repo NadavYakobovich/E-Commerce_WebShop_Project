@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Accordion, Button, Card, Col, Image, Row} from "react-bootstrap";
+import {Accordion,  Image, } from "react-bootstrap";
 import '../ManagementBoard.css'
 
 function OrdersTab({api}) {
@@ -9,21 +9,27 @@ function OrdersTab({api}) {
         api.getUsersCart(setCartUsers);
     }, [api])
     return (
-        <Accordion className="mt-2" >
+        <Accordion className="mt-2" alwaysOpen  >
             {
                 cartUsers != null ? cartUsers.map((cartUser, index) => (
                     // show only the item that there cart is not empty
                     cartUser.cart.length > 0 ?
-                        <Accordion.Item eventKey={index}>
-                            <Accordion.Header>{cartUser.userName}</Accordion.Header>
+                        <Accordion.Item eventKey={index} >
+                            <Accordion.Header><i className="bi bi-handbag-fill me-2"></i> Buyer Name:  {cartUser.userName}</Accordion.Header>
                             <Accordion.Body>
                                 <Accordion>
                                     {
                                         cartUser.cart.map((product, indexCart) => (
                                             <Accordion.Item eventKey={ indexCart}>
-                                                <Accordion.Header className='tabCartOrders'>{product.name + " - quantity: " + product.quantity}</Accordion.Header>
+                                                <Accordion.Header className="tabCartOrders">
+                                                    <div className="d-flex bd-highlight">
+                                                        <div className="p-2 flex-grow-1 bd-highlight"> {product.name}  </div>
+                                                        <div className="p-2 bd-highlight"> quantity: {product.quantity} </div>
+                                                    </div>
+                                                </Accordion.Header>
                                                 <Accordion.Body className="d-flex justify-content-around">
-                                                    <Image className="ProPic" src={product.pic}
+
+                                                    <Image  className="ProPic" src={product.pic}
                                                            alt="product" fluid={true}
                                                            roundedCircle={true}/>
                                                     <div>

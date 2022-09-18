@@ -8,6 +8,7 @@
 * Option to register to the site and login
 * Each user have a personal product cart, where he can add/delete products to it and see the total price
 * Management page for the admin to add, edit and delete products
+* Orders Tab in the management page, where the admin can see all the orders of his shop and their details
 
 ### Screenshot display from the webapp
 * The web shop is current an electronic commerce website that allows customers to directly buy goods  from a seller over the Internet using a web browser.
@@ -16,31 +17,38 @@
 ### Home Page:
 * The user can view the products and choose item to add the products cart
 
-<img src="./readmepic/homepage.png" alt="drawing" width="500"/>
+<img src="./readmepic/homepage.png" alt="drawing" width="75%"/>
 
 ### Filter feature:
 * The user can filter the products by category/Brand or by name
 
-<img src="./readmepic/filter.png" alt="drawing" width="500"/>
+<img src="./readmepic/filter.png" alt="drawing" width="75%"/>
 
 ### Cart Page:
 * Each user that login can add products to cart and can delete the products from cart, the cart is save in the database
 
-<img src="./readmepic/cart.png" alt="drawing" width="600"/>
+<img src="./readmepic/cart.png" alt="drawing" width="75%"/>
 
-### Sign up & Sign in page:
-<img src="./readmepic/signin.png" alt="drawing" width="600"/>
 
-<img src="./readmepic/signup.png" alt="drawing" width="600"/>
 
 ### Management page:
 * The admin can add new products, delete products, update products, and view all products
 
-<img src="./readmepic/management.png" alt="drawing" width="700"/>
+<img src="./readmepic/management.png" alt="drawing" width="75%"/>
 
 * Edit product window
 
-<img src="./readmepic/edititemwin.png" alt="drawing" width="700"/>
+<img src="./readmepic/edititemwin.png" alt="drawing" width="75%"/>
+
+* Orders Tab management - the admin can click on the item  in the order and see more information about the order
+
+<img src="./readmepic/ordersTab.png" alt="drawing" width="75%"/>
+
+
+### Sign up & Sign in page:
+<img src="./readmepic/signin.png" alt="drawing" width="75%"/>
+
+<img src="./readmepic/signup.png" alt="drawing" width="75%"/>
 
 
 ## Client

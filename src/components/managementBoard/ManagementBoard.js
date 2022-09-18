@@ -26,14 +26,14 @@ function ManagementBoard({api}) {
     } else {
 
         return (
-            <Row className="management-board">
-                <Col sm={2} className="sideManger">
-                    <Nav defaultActiveKey="/home" className="flex-column">
+            <Row className="management-board ">
+                <Col   xxl={1} className="sideManger">
+                    <Nav defaultActiveKey="/home" className="flex-column ">
                         <Nav.Link className="nav-link" as={Link} to="/management/">Management Page</Nav.Link>
                         <Nav.Link className="nav-link" as={Link} to="/management/orders">Order</Nav.Link>
                     </Nav>
                 </Col>
-                <Col sm={10}>
+                <Col  >
                     {/*the base route of this page is /management*/}
                         <Routes>
                             <Route path="/" element={ products.map((product, index) => (
