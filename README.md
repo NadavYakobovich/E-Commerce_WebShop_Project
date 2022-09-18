@@ -52,7 +52,7 @@
 
 
 ## Client
-* React
+* React (using HTML & JavaScript & CSS)
 * React-Router
 * React-bootstrap
 
