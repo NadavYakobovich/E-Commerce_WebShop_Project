@@ -80,7 +80,7 @@ function SignUp({api,setLoggedInUser}) {
                 <Col className="me-0 ">
                     <Card className="p-4 mt-5 CardSignIn">
                         <form onSubmit={SubmitHandler}>
-                            <h3>Sign In</h3>
+                            <h3>Sign UP</h3>
                             <div className="mb-3">
                                 <label>User Name</label>
                                 <input
