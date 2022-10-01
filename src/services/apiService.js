@@ -99,6 +99,12 @@ export class apiServer {
             console.log(err)
         })
     }
+
+    async uploadImage(image) {
+        return await this.axiosInstance.post('products/uploadPicture', image).then(({data}) => data).catch(err => {
+            console.log(err)
+        })
+    }
 }
 
 

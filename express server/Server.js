@@ -5,12 +5,15 @@ var cors = require('cors')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 const jsonParser = bodyParser.json();
+
 app.use(jsonParser);
 
 const userController = require('./controllers/UserControllers');
 const productController = require('./controllers/ProductControllers');
 const Users = require("./models/User");
 const Product = require("./models/Product");
+app.use(express.static('public'));
+
 
 
 //CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
@@ -24,6 +27,8 @@ const db = mongoose.connect('mongodb://localhost:27017/webShopDb', {useNewUrlPar
     ).catch(err => {
         console.log(err)
     });
+
+
 
 //the user api Functions
 
@@ -55,6 +60,7 @@ app.post('/api/products/update', productController.update)
 
 app.get('/api/user/carts', userController.getUsersCart)
 
+app.post('/api/products/uploadPicture', productController.uploadPicture)
 
 app.listen(4000, () => {
         console.log('listening on port 4000');

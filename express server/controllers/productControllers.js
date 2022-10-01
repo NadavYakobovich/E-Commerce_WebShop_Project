@@ -2,6 +2,32 @@ const mongoose = require('mongoose');
 //the Collection of the products in the db
 const Product = require('../models/Product');
 const Users = require("../models/User");
+const multer = require("multer");
+
+
+// the pic of the product will be saved in the server in the storage folder
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'public/dataPic')
+    },
+    filename: (req, file, cb) => {
+        cb(null,file.originalname)
+    }
+});
+
+const upload = multer({storage}).single('file');
+
+//upload a pic to the server
+exports.uploadPicture = async (req, res) => {
+    upload(req, res, (err) => {
+        if (err) {
+            return res.status(500).json(err)
+        }
+        console.log(req.file)
+        return res.status(200).send(req.files)
+    })
+}
+
 
 //get all the products from the server
 exports.getProducts = async (req, res) => {

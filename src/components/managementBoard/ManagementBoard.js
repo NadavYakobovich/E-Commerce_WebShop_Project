@@ -8,6 +8,7 @@ import CartList from "../cart/CartList";
 import SignIn from "../singin/SignIn";
 import SignUp from "../singup/SignUp";
 import OrdersTab from "./ordersTab/OrdersTab";
+import AddProductWin from "./addProductWin/AddProductWin";
 
 function ManagementBoard({api}) {
     const [products, setProducts] = useState(null)
@@ -28,9 +29,10 @@ function ManagementBoard({api}) {
         return (
             <Row className="management-board ">
                 <Col   xxl={1} className="sideManger">
-                    <Nav defaultActiveKey="/home" className="flex-column ">
-                        <Nav.Link className="nav-link" as={Link} to="/management/">Management Page</Nav.Link>
-                        <Nav.Link className="nav-link" as={Link} to="/management/orders">Order</Nav.Link>
+                    <Nav defaultActiveKey="/home" className="flex-column text-start fs-6 ">
+                        <Nav.Link className="nav-link" as={Link} to="/management/"> <i className="bi bi-award-fill m-2"></i> Management</Nav.Link>
+                        <Nav.Link className="nav-link" as={Link} to="/management/orders"> <i className="bi bi-card-list m-2"></i>Orders</Nav.Link>
+                        <Nav.Link className="nav-link" as={Link} to="/management/newProduct"> <i className="bi bi-plus-circle-fill m-2"></i> Add  Product</Nav.Link>
                     </Nav>
                 </Col>
                 <Col  >
@@ -40,6 +42,8 @@ function ManagementBoard({api}) {
                                 <ListItemManager key={index} api={api} product={product} setProducts={setProducts}></ListItemManager>))
                             }></Route>
                             <Route path="/orders" element={<OrdersTab api={api}></OrdersTab>}> </Route>
+                            <Route path="/newProduct" element={<AddProductWin api={api}></AddProductWin>}> </Route>
+
                         </Routes>
                 </Col>
             </Row>
