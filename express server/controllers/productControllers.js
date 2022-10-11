@@ -8,6 +8,7 @@ const multer = require("multer");
 // the pic of the product will be saved in the server in the storage folder
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
+        // the pic will be saved in the storage folder
         cb(null, 'public/dataPic')
     },
     filename: (req, file, cb) => {
@@ -57,6 +58,25 @@ exports.update = async (req, res) => {
         res.status(500)
         throw new Error("Fail to update the products")
     }
+}
+
+//add a new product to the server
+exports.addProduct = async(req, res) => {
+const product = new Product({
+        name: req.body.data.name,
+        price: req.body.data.price,
+        brand: req.body.data.brand,
+        category: req.body.data.category,
+        image: req.body.data.image
+    })
+    const newProduct = await product.save();
+    if(newProduct){
+        res.status(200).json(newProduct)
+    }else {
+        res.status(500)
+        throw new Error("Fail to add the product")
+    }
+
 }
 
 
