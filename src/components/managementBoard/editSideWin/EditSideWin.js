@@ -21,7 +21,7 @@ function EditSideWin({api,setProducts, product, ...props}) {
             brand: $('#brand').val(),
             category: $('#category').val(),
             price: $('#price').val(),
-            pic: product.pic,
+            pic: $('#pic').val()
         }
         //send the new product details to the server and then update the list of the products in the management board with the updated product
         await api.updateProduct(updatedProduct_Item).then(
@@ -34,19 +34,23 @@ function EditSideWin({api,setProducts, product, ...props}) {
     return (
         <>
             <Button variant="primary" onClick={handleShow} className="m-2 btn-shape btn-shape-blue">
-                Edit
+                <i className="bi bi-pencil-square"></i>
             </Button>
             <Offcanvas show={show} onHide={handleClose} {...props}>
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>Edit Item</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                    <Row> <Image src={product.pic}></Image></Row>
+                    <Row> <Image src={"../dataPic/"+ product.pic}></Image></Row>
                     <Row>
                         <Form onSubmit={SubmitUpdate}>
                             <Form.Group className="mb-3" controlId="name">
                                 <Form.Label>Product Name</Form.Label>
                                 <Form.Control defaultValue={product.name} type="text" placeholder={product.name}/>
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="pic">
+                                <Form.Label>Product Picture</Form.Label>
+                                <Form.Control defaultValue={product.pic} type="text" placeholder={product.pic}/>
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="brand">
                                 <Form.Label>Product Brand</Form.Label>

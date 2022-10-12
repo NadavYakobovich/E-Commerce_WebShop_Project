@@ -42,7 +42,7 @@ function ManagementBoard({api}) {
                                 <ListItemManager key={index} api={api} product={product} setProducts={setProducts}></ListItemManager>))
                             }></Route>
                             <Route path="/orders" element={<OrdersTab api={api}></OrdersTab>}> </Route>
-                            <Route path="/newProduct" element={<AddProductWin api={api}></AddProductWin>}> </Route>
+                            <Route path="/newProduct" element={<AddProductWin api={api} setProducts={setProducts}></AddProductWin>}> </Route>
 
                         </Routes>
                 </Col>

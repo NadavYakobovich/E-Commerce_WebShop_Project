@@ -2,12 +2,15 @@ import React, {useEffect, useState} from 'react';
 import {Button, Card, Col, Form, Row} from "react-bootstrap";
 import $ from 'jquery';
 import "./FileUploderCss.css"
+import "../ManagementBoard.css"
+import {useNavigate} from "react-router-dom";
 
-function AddProductWin({api}) {
+function AddProductWin({api,setProducts}) {
 
     const [file, setFile] = useState(null);
     const [errors, setErrors] = useState({name: "", price: "", brand: '', category: "", file: ""});
-    let  valid = false;
+    let valid = false;
+    const navigate = useNavigate();
 
     const onInputChange = (e) => {
         setFile(e.target.files[0])
@@ -15,9 +18,9 @@ function AddProductWin({api}) {
     };
 
     function validateForm() {
-       let errors = ({name: "", price: "", brand: '', category: "", file: ""});
-       let validCheck = true
-        if (($("#name").val()) ==="") {
+        let errors = ({name: "", price: "", brand: '', category: "", file: ""});
+        let validCheck = true
+        if (($("#name").val()) === "") {
             errors.name = "Name is required";
             validCheck = false
         }
@@ -39,7 +42,7 @@ function AddProductWin({api}) {
         }
         console.log("in the validate form")
         console.log(validCheck)
-        valid  = validCheck
+        valid = validCheck
         console.log(valid)
         return errors;
     }
@@ -62,12 +65,15 @@ function AddProductWin({api}) {
             brand: $('#brand').val(),
             category: $('#category').val(),
             price: $('#price').val(),
-            pic: file.name,
+            pic: file.name
         }
         console.log("in the submit")
         console.log(file)
         console.log(product)
-        // api.uploadImage(data).then(r => console.log(r))
+        api.uploadImage(data).then(()=>
+            api.addProduct(product).then(()=>
+                api.getProducts(setProducts).then(()=>
+                    navigate(""))))
     }
 
 
@@ -104,7 +110,7 @@ function AddProductWin({api}) {
                             <Form.Group className="mb-3 d-flex" controlId="price">
                                 <Form.Label column sm={2}>Price</Form.Label>
                                 <Col sm={10}>
-                                    <Form.Control type="text" placeholder="price"/>
+                                    <Form.Control type="number" placeholder="price"/>
                                     <p className='fs-6 text-danger'> {errors.price}</p>
 
                                 </Col>
@@ -124,8 +130,9 @@ function AddProductWin({api}) {
                     </Col>
                 </Row>
 
-                <Button variant="primary" type="submit" className='m-2'>
-                    ADD
+                <Button variant="primary" type="submit" className='m-2 btn-shape btn-shape-blue'>
+                    ADD <i className="bi bi-plus"></i>
+
                 </Button>
             </Form>
 

@@ -62,7 +62,9 @@ app.get('/api/user/carts', userController.getUsersCart)
 
 app.post('/api/products/uploadPicture', productController.uploadPicture)
 
-app.post('/api/products/add', productController.addProduct)
+app.post('/api/products/new', productController.addProduct)
+
+app.delete('/api/products/delete', productController.deleteProduct)
 
 app.listen(4000, () => {
         console.log('listening on port 4000');

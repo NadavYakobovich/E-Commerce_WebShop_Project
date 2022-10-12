@@ -24,7 +24,7 @@ function ProductCard(props) {
     return (
         <Col className="m-2"  md={3} sm={6} xs={6}>
             <Card className="productCard" style={{width: '40rem', minWidth: '30px'}}>
-            <Card.Img variant="top" src={product.pic}/>
+            <Card.Img variant="top" src={"../dataPic/" + product.pic}/>
             <Card.Body>
             <Card.Title>{product.name}</Card.Title>
             <Card.Text>

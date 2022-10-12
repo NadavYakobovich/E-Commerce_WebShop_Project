@@ -105,6 +105,18 @@ export class apiServer {
             console.log(err)
         })
     }
+
+    async addProduct(product) {
+        return await this.axiosInstance.post('products/new',{data:product}).then(({data}) => data).catch(err => {
+            console.log(err)
+        })
+    }
+
+    async deleteProduct(productId) {
+        return await this.axiosInstance.delete('products/delete',{data:{productId:productId}}).then(({data}) => data).catch(err => {
+            console.log(err)
+        })
+    }
 }
 
 
