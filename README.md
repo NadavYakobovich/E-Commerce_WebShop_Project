@@ -1,4 +1,8 @@
-## Welcome to the E-commerce Projects
+## Welcome to the E-commerce Project
+
+<p align="center">
+<img src="./readmepic/homepage.png" alt="drawing" width="50%"/>
+</p>
 
 ## About the project 
 
@@ -6,11 +10,9 @@
 * React (using HTML & JavaScript & CSS)
 * React-Router
 * React-bootstrap
-
 ## Server
 * Express.js
 * Node.js
-
 ## Database
 * MongoDB
 * Mongoose
