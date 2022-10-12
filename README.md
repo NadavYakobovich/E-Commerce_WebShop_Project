@@ -1,7 +1,6 @@
 ## Welcome to the E-commerce Projects
 
 ## About the project 
-![](../../../../Desktop/main gif.gif)
 ## Features:
 * Display products page of the shop
 * Ability to filter products by name or certain categories
