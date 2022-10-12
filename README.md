@@ -1,7 +1,20 @@
 ## Welcome to the E-commerce Projects
 
 ## About the project 
-![](../../../../Desktop/main gif.gif)
+
+## Client
+* React (using HTML & JavaScript & CSS)
+* React-Router
+* React-bootstrap
+
+## Server
+* Express.js
+* Node.js
+
+## Database
+* MongoDB
+* Mongoose
+
 ## Features:
 * Display products page of the shop
 * Ability to filter products by name or certain categories
@@ -51,17 +64,5 @@
 <img src="./readmepic/signup.png" alt="drawing" width="75%"/>
 
 
-## Client
-* React (using HTML & JavaScript & CSS)
-* React-Router
-* React-bootstrap
-
-## Server
-* Express.js
-* Node.js
-
-## Database
-* MongoDB
-* Mongoose
 
 
