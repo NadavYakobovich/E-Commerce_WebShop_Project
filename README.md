@@ -10,7 +10,7 @@
 * Management page for the admin to add, edit and delete products
 * Orders Tab in the management page, where the admin can see all the orders of his shop and their details
 
-### Screenshot display from the webapp
+### Screenshot from the webapp
 * The web shop is current an electronic commerce website that allows customers to directly buy goods  from a seller over the Internet using a web browser.
 * But, it is not limited only to the field of electronics, the store owner can put whatever products he wants, depending on what information he entered into the database
 
