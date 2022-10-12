@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Col, Nav, Row} from "react-bootstrap";
 import "./ManagementBoard.css"
 import ListItemManager from "./listItem/ListItemManager";
-import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
+import {BrowserRouter as Router, Link, Route, Routes, useNavigate} from "react-router-dom";
 import ProductsBoard from "../ProductsBoard";
 import CartList from "../cart/CartList";
 import SignIn from "../singin/SignIn";
@@ -12,6 +12,8 @@ import AddProductWin from "./addProductWin/AddProductWin";
 
 function ManagementBoard({api}) {
     const [products, setProducts] = useState(null)
+    const navigate = useNavigate();
+
 
     useEffect(() => {
         api.getProducts(setProducts);
@@ -42,7 +44,7 @@ function ManagementBoard({api}) {
                                 <ListItemManager key={index} api={api} product={product} setProducts={setProducts}></ListItemManager>))
                             }></Route>
                             <Route path="/orders" element={<OrdersTab api={api}></OrdersTab>}> </Route>
-                            <Route path="/newProduct" element={<AddProductWin api={api} setProducts={setProducts}></AddProductWin>}> </Route>
+                            <Route path="/newProduct" element={<AddProductWin api={api} setProducts={setProducts} navigate={navigate}></AddProductWin>}> </Route>
 
                         </Routes>
                 </Col>

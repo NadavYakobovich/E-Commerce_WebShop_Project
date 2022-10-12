@@ -5,12 +5,11 @@ import "./FileUploderCss.css"
 import "../ManagementBoard.css"
 import {useNavigate} from "react-router-dom";
 
-function AddProductWin({api,setProducts}) {
+function AddProductWin({api,setProducts,navigate}) {
 
     const [file, setFile] = useState(null);
     const [errors, setErrors] = useState({name: "", price: "", brand: '', category: "", file: ""});
     let valid = false;
-    const navigate = useNavigate();
 
     const onInputChange = (e) => {
         setFile(e.target.files[0])

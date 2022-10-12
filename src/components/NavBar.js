@@ -18,7 +18,7 @@ function NavBar({setLoggedInUser}) {
             <Container className="w-75">
                 <Navbar.Brand className="nav-link"  as={Link} to="/" >WebShop Project</Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link className="nav-link" as={Link} to="/">Home</Nav.Link>
+                    <Nav.Link className="nav-link" as={Link} to="/"><i className="bi bi-house-fill"></i> Home</Nav.Link>
                     <Nav.Link  className="nav-link" as={Link} to="/cart"><i className="bi bi-cart-check-fill"></i> Cart</Nav.Link>
 
                     {loggedInUser == null ?
