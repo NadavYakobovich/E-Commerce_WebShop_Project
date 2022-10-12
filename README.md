@@ -4,16 +4,16 @@
 <img src="./readmepic/homepage.png" alt="drawing" width="50%"/>
 </p>
 
-## About the project 
+## 📌 About the project 
 
-## Client
+## 💻 Client
 * React (using HTML & JavaScript & CSS)
 * React-Router
 * React-bootstrap
-## Server
+## 📥 Server
 * Express.js
 * Node.js
-## Database
+## 📗 Database
 * MongoDB
 * Mongoose
 
