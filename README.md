@@ -55,6 +55,13 @@
 
 <img src="./readmepic/editgif.gif" alt="drawing" width="75%"/>
 
+* Add product window
+
+ <img src="./readmepic/addproductGif.gif" alt="drawing" width="75%"/>
+
+
+
+
 * Orders Tab management - the admin can click on the item  in the order and see more information about the order
 
 <img src="./readmepic/ordersTab gif.gif" alt="drawing" width="80%"/>

@@ -84,34 +84,34 @@ function AddProductWin({api, setProducts, navigate, notify}) {
       <div className='m-2'> Add New Product</div>
       <Form onSubmit={SubmitHandler} className="m-4">
         <Row>
-          <Col sm={6} className='fs-5'>
-            <Card className='p-3 m-1'>
+          <Col sm={6} className='fs-6'>
+            <Card className='p-3 m-1 text-start'>
               <Form.Group as={Row} className="mb-3 d-flex" controlId="name">
-                <Form.Label column sm={2}>Name</Form.Label>
-                <Col sm={10}>
+                <Form.Label column sm={3} > <i className="bi bi-pencil-square"></i> Name</Form.Label>
+                <Col>
                   <Form.Control type="text" placeholder="name"/>
                   <p className='fs-6 text-danger'> {errors.name}</p>
                 </Col>
               </Form.Group>
               <Form.Group className="mb-3 d-flex" controlId="brand">
-                <Form.Label column sm={2}>Brand</Form.Label>
-                <Col sm={10}>
+                <Form.Label column sm={3}> <i className="bi bi-info-circle me-1"></i>Brand</Form.Label>
+                <Col >
                   <Form.Control type="text" placeholder="brand"/>
                   <p className='fs-6 text-danger'> {errors.brand}</p>
 
                 </Col>
               </Form.Group>
               <Form.Group className="mb-3 d-flex" controlId="category">
-                <Form.Label column sm={2}>Category</Form.Label>
-                <Col sm={10}>
+                <Form.Label column sm={3}> <i className="bi bi-tags me-1"></i>Category</Form.Label>
+                <Col >
                   <Form.Control type="text" placeholder="category"/>
                   <p className='fs-6 text-danger'> {errors.category}</p>
 
                 </Col>
               </Form.Group>
               <Form.Group className="mb-3 d-flex" controlId="price">
-                <Form.Label column sm={2}>Price</Form.Label>
-                <Col sm={10}>
+                <Form.Label column sm={3}> <i className="bi bi-coin me-1"></i>Price</Form.Label>
+                <Col >
                   <Form.Control type="number" placeholder="price"/>
                   <p className='fs-6 text-danger'> {errors.price}</p>
 
