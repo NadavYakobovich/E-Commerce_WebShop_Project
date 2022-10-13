@@ -4,7 +4,7 @@ import "../ManagementBoard.css"
 import EditSideWin from "../editSideWin/EditSideWin";
 import DeleteBtn from "./delete model/deleteBtn";
 
-function ListItemManager({api,product,setProducts}) {
+function ListItemManager({api,product,setProducts, notify}) {
 
 
 
@@ -27,9 +27,9 @@ function ListItemManager({api,product,setProducts}) {
                     {product.price}
                 </Col>
                 <Col sm={2}  className="my-auto">
-                    <DeleteBtn  className="m-2 btn-shape" variant="danger"  product={product} api={api} setProducts={setProducts} ></DeleteBtn>
+                    <DeleteBtn  className="m-2 btn-shape" variant="danger"  product={product} api={api} setProducts={setProducts}  notify={notify} ></DeleteBtn>
                     {/*the edit button should open a side window with the product details*/}
-                    <EditSideWin product={product} api={api} placement={'end'} setProducts={setProducts}></EditSideWin>
+                    <EditSideWin product={product} api={api} placement={'end'} setProducts={setProducts} notify={notify}></EditSideWin>
                 </Col>
             </Row>
         </Card>

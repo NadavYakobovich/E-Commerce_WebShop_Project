@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button, Modal} from "react-bootstrap";
 
-function DeleteBtn({product, api, setProducts}) {
+function DeleteBtn({product, api, setProducts , notify}) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -10,7 +10,7 @@ function DeleteBtn({product, api, setProducts}) {
     function deleteProduct() {
         api.deleteProduct(product._id).then(
             () => {
-                api.getProducts(setProducts).then( ()=> handleClose())
+                api.getProducts(setProducts).then( ()=> handleClose()).then(() => notify("deleted successfully","error"))
             }
         )
     }
