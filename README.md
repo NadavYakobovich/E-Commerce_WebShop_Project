@@ -49,11 +49,11 @@
 ### Management page:
 * The admin can add new products, delete products, update products, and view all products
 
-<img src="./readmepic/management.png" alt="drawing" width="75%"/>
+<img src="./readmepic/mangwin.png" alt="drawing" width="75%"/>
 
 * Edit product window
 
-<img src="./readmepic/edititemwin.png" alt="drawing" width="75%"/>
+<img src="./readmepic/editgif.gif" alt="drawing" width="75%"/>
 
 * Orders Tab management - the admin can click on the item  in the order and see more information about the order
 
