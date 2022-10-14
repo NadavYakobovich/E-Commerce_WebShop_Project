@@ -4,7 +4,12 @@
 <img src="./readmepic/homepage.png" alt="drawing" width="50%"/>
 </p>
 
-## 📌 About the project 
+### 📌 About the project
+
+<p align="center">
+<img src="./readmepic/architecture.png" alt="drawing" width="75%"/>
+</p>
+
 
 ## 💻 Client
 * React (using HTML & JavaScript & CSS)
