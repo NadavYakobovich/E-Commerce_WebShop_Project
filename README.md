@@ -7,7 +7,7 @@
 ### 📌 About the project
 
 <p align="center">
-<img src="./readmepic/architecture.png" alt="drawing" width="75%"/>
+<img src="./readmepic/architecture.png" alt="drawing" width="90%"/>
 </p>
 
 
