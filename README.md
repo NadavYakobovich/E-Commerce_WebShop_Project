@@ -42,7 +42,7 @@
 ### Filter feature:
 * The user can filter the products by category/Brand or by name
 
-<img src="./readmepic/filter gif.gif" alt="drawing" width="75%"/>
+<img src="./readmepic/filter gif.gif" alt="drawing" width="85%"/>
 
 ### Cart Page:
 * Each user that login can add products to cart and can delete the products from cart, the cart is save in the database
@@ -58,18 +58,18 @@
 
 * Edit product window
 
-<img src="./readmepic/editgif.gif" alt="drawing" width="75%"/>
+<img src="./readmepic/editgif.gif" alt="drawing" width="85%"/>
 
 * Add product window
 
- <img src="./readmepic/addproductGif.gif" alt="drawing" width="75%"/>
+ <img src="./readmepic/addproductGif.gif" alt="drawing" width="85%"/>
 
 
 
 
 * Orders Tab management - the admin can click on the item  in the order and see more information about the order
 
-<img src="./readmepic/ordersTab gif.gif" alt="drawing" width="80%"/>
+<img src="./readmepic/ordersTab gif.gif" alt="drawing" width="85%"/>
 
 
 ### Sign up & Sign in page:
