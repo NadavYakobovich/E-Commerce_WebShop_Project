@@ -14,8 +14,10 @@
 ## 💻 Client
 * React (using HTML & JavaScript & CSS)
 * React-Router
+* axios
 * React-bootstrap
 ## 📥 Server
+* REST API
 * Express.js
 * Node.js
 ## 📗 Database
